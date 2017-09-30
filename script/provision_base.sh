@@ -5,6 +5,8 @@ java -version 2>/dev/null || (echo "Installing java 8..." && sudo apt-get update
 echo Java version is $(echo $(java -version 2>&1 >/dev/null | grep 'version' | awk '{print $3}') | cut -c2-4)
 echo "Checking Docker version"
 docker -v 2>/dev/null || (echo "Installing Docker..." && curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh && docker -v)
+echo "Checking if Datadog is installed"
+/etc/init.d/datadog-agent info 2>/dev/null || (echo "Installing Datadog" && DD_API_KEY=877c66dee5181aff4932b479f44324f6 bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)")
 echo "Checking ZSH version"
 # written for user ubuntu
 zsh --version 2>/dev/null || (sudo apt-get install -y zsh && sudo chsh -s /bin/zsh ubuntu && su ubuntu sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && cp /home/ubuntu/.oh-my-zsh/templates/zshrc.zsh-template /home/ubuntu/.zshrc && perl -pi.back -e 's/robbyrussell/blinks/g' /home/ubuntu/.zshrc && source /home/ubuntu/.zshrc)
