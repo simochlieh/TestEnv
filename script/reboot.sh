@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+LOG_FILE=/var/log/cron/cron.log && date>>${LOG_FILE} && cd /Users/simo/VM/ && vagrant destroy -f 3>&1 1>>${LOG_FILE} 2>&1 && vagrant up --provision 3>&1 1>>${LOG_FILE} 2>&1 && vagrant suspend 3>&1 1>>${LOG_FILE} 2>&1 && echo \\n >>${LOG_FILE}
