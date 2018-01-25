@@ -1,5 +1,4 @@
 #!/bin/bash
-/bin/bash
 echo "Checking java version"
 java -version 2>/dev/null || (echo "Installing java 8..." && sudo apt-get update && sudo apt-get install -y openjdk-8-jdk)
 echo Java version is $(echo $(java -version 2>&1 >/dev/null | grep 'version' | awk '{print $3}') | cut -c2-4)
