@@ -19,5 +19,3 @@ echo "Checking ZSH version"
 # written for user ubuntu
 zsh --version 2>/dev/null || (sudo apt-get install -y zsh && sudo chsh -s /bin/zsh ubuntu && sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && cp /home/ubuntu/.oh-my-zsh/templates/zshrc.zsh-template /home/ubuntu/.zshrc && perl -pi.back -e 's/robbyrussell/blinks/g' /home/ubuntu/.zshrc && source /home/ubuntu/.zshrc)
 echo "Provisioning Done!"
-# Install Python 2.7.14
-python --version || (sudo apt-get install python-pip python-dev build-essential  && sudo pip install --upgrade pip  && sudo pip install --upgrade virtualenv)
