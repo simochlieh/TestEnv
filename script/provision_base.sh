@@ -20,4 +20,5 @@ echo "Checking ZSH version"
 zsh --version 2>/dev/null || (sudo apt-get install -y zsh && sudo chsh -s /bin/zsh ubuntu && sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && cp /home/ubuntu/.oh-my-zsh/templates/zshrc.zsh-template /home/ubuntu/.zshrc && perl -pi.back -e 's/robbyrussell/blinks/g' /home/ubuntu/.zshrc && source /home/ubuntu/.zshrc)
 echo "Installing basic python packages if not already installed"
 sudo apt-get install build-essential libssl-dev libffi-dev python3-dev
+sudo apt-get install -y python3-venv
 echo "Provisioning done"
