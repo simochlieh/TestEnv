@@ -17,5 +17,5 @@ sudo apt-get update
 sudo apt-get install sbt
 echo "Checking ZSH version"
 # written for user ubuntu
-zsh --version 2>/dev/null || (sudo apt-get install -y zsh && sudo chsh -s /bin/zsh ubuntu && su ubuntu sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && cp /home/ubuntu/.oh-my-zsh/templates/zshrc.zsh-template /home/ubuntu/.zshrc && perl -pi.back -e 's/robbyrussell/blinks/g' /home/ubuntu/.zshrc && source /home/ubuntu/.zshrc)
+zsh --version 2>/dev/null || (sudo apt-get install -y zsh && sudo chsh -s /bin/zsh ubuntu && sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && cp /home/ubuntu/.oh-my-zsh/templates/zshrc.zsh-template /home/ubuntu/.zshrc && perl -pi.back -e 's/robbyrussell/blinks/g' /home/ubuntu/.zshrc && source /home/ubuntu/.zshrc)
 echo "Provisioning Done!"
